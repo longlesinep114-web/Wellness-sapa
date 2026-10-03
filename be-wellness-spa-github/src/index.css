@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background-color: #FAF7F2;
+    color: #262220;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar in spa theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EEE5;
+}
+::-webkit-scrollbar-thumb {
+  background: #327256;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #245943;
+}
+
+/* Pulse animation for hotline/booking button */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(36, 89, 67, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(36, 89, 67, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(36, 89, 67, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s infinite;
+}
+
+/* Custom glass effect with green/brown tint */
+.glass-panel {
+  background: rgba(253, 251, 247, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 148, 103, 0.2);
+}
